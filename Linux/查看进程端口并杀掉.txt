@@ -1,0 +1,16 @@
+1. 查看端口号占用情况：
+netstat -apn|grep 80  
+
+tcp        0      0 10.65.42.27:80              172.22.142.20:62771         ESTABLISHED6426/lighttpd
+
+
+2. 确定进程号
+找到进程号以后，再使用以下命令查看详细信息：
+ps -aux|grep <进程号>  
+
+eg: ps -aux | grep 6426
+bae       6426  0.0  0.2 133724 22848 ?      Sl   Feb27   0:22 bin/lighttpd
+
+
+3. 杀掉该进程
+kill -9 <pid>  

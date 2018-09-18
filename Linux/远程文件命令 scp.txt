@@ -1,0 +1,8 @@
+// 上传本地文件到服务器上
+scp -P 22 /Users/shun/.ssh/id_rsa.pub root@45.32.64.12:~/.ssh/id_rsa.pub
+
+// 将本地目录上传到服务器上
+scp -P 22 -r /Users/shun/Desktop/test root@45.32.64.12:/home/Download/
+
+// 从服务器上下载文件
+scp username@servername:/path/filename /tmp/local_destination

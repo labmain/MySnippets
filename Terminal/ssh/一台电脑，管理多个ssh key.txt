@@ -1,0 +1,22 @@
+在~/.ssh/目录下新建config文件，用于配置各个公私钥对应的主机
+
+Host name
+  Hostname  ip
+  Port  22
+  User  root
+  Identityfile  ~/.ssh/name
+
+
+
+注意：
+
+每个邮箱能配置一个公私钥，邮箱是一个重要的身份识别标志
+几个主机的命名不能相同；
+私钥路径也可以写为 ~/.ssh/...；
+如有需要还可以添加Port:xxxx端口配置。
+
+5.
+测试连接情况
+$ ssh -T git@second.github.com
+
+注：出于安全等考虑，一定要将 ~/.ssh/config文件和 ~/.ssh/key文件的权限设为600 。

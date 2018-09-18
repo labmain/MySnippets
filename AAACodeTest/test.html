@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>haha</title>
+</head>
+
+<body>
+    <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
+    <script src="https://cdn.bootcss.com/Base64/1.0.1/base64.js"></script>
+    <script src="https://cdn.bootcss.com/node-uuid/1.4.8/uuid.js"></script>
+    <script>
+        // uuid
+        var uuid = uuid.v1();
+
+        // 时间戳
+        var timestamp1 = Date.parse(new Date());
+        // path  为uri部分 eg. http://kmf.com/users/1?p=123   则path为 /users/1
+        var path = "/users/1";
+        // method 为 POST  GET  DELETE  PUT  请求方式 为大写
+        var method = "GET";
+        /* query 为 url  ?部分的内容  eg. http://kmf.com/users/1?keywords=kmf&p=123   则query为```keywords=kmf&p=10```
+        转化为数组 并按照key 升序排序，后连接起来。 ```（keywordskmfp10）```
+        */
+        var query = "keywords=kmf&p=10";
+        // body json体  进行32位 md5之后转大写 base64encode    eg. ```base64_encode(strup(md5($body)));```
+        var body = btoa(md5("body"));
+        var appKey = "kmf.com.word";
+        // sign
+        /*
+        前面计算的字符串再加上appKey  按照Base64编码规则 把前面的HMAC值 hash256加密编码成字符串，即得到签名值（Signature）。
+        上面例子假设appKey为toefl
+        则签名待加密字符串 StringToSign : 1502855485ABASDFAASDF1231ASDA/users/1GETkeywordskmfp10e10adc3949ba59abbe56toefl
+        最后对StringToSign 加密 生成sign
+        ```$sign = base64_encode(hash_hmac('sha256', $StringToSign,  $appSecret, true));```
+        */
+        // 时间戳 + uuid + path + method + query + body + appKey
+
+        // document.write(uuid + timestamp1 + path + method + query + body + appKey);
+        document.write(uuid);
+    </script>
+</body>
+
+</html>

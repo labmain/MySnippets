@@ -1,0 +1,5 @@
+回到某一个节点
+git reset --hard 5db4eddeca2
+然后把现在这个节点，强行推送到远端
+git push -f origin 5db4eddeca2:master
+# 注意 master 是否是你要撤销的分支
