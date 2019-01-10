@@ -1,0 +1,1 @@
+WHERE examUnique IS NUll

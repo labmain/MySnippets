@@ -16,3 +16,7 @@
 
 在容器mynginx中开启一个交互模式的终端
 `docker exec -i -t  mynginx /bin/bash`
+
+
+如果容器没有安装bash的话，可以使用sh连接
+`docker exec -i -t  mynginx /bin/sh`

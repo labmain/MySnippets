@@ -1,0 +1,1 @@
+ALTER TABLE bookrecord ADD COLUMN examUnique TEXT DEFAULT '';
