@@ -1,5 +1,9 @@
-let a = "asdf"
-let b = "sdf" + a
-print(b)
-print("Hello World!" + "asdfsadf")
-print("Hello")
+import Foundation
+
+let date = Date() 
+let format = "EEEE-dd-MMM-yyyy" 
+let dateFormatter = DateFormatter() 
+dateFormatter.dateFormat = format 
+
+dateFormatter.string(from: date) 
+print(dateFormat.string)

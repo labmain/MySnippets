@@ -25,3 +25,9 @@ brew home   // 用浏览器打开brew的官方网站
 brew info   // 显示软件信息
 brew deps   // 显示包依赖
 ```
+
+## HomeBrew 安装 App
+
+```
+brew cask install iterm2
+```

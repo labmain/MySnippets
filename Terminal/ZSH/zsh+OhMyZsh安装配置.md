@@ -3,13 +3,20 @@ Mac 系统自带了 Zsh, 一般不是最新版，如果需要最新版可通过 
 `brew install zsh`
 可通过 `zsh --version` 命令查看 Zsh 的版本
 使用 `echo $SHELL` 命令查看当前使用的 shell
-修改默认 Shell
-在 /etc/shells 文件中加入如下一行
-`/usr/local/bin/zsh`
-然后运行命令
-`chsh -s /usr/local/bin/zsh`
+### 修改默认 Shell
 
-## 修改立即生效
+注意：这里的路径取决于你下载后存放的路径。一般不用修改，Mac下默认已经有了。并且如果安装了oh-my-zsh之后会默认修改。
+
+1.在/etc/shells文件中加入如下一行
+    `/usr/local/bin/zsh`
+    或者
+    `/bin/zsh`
+2.然后运行命令
+    `chsh -s /usr/local/bin/zsh`
+    或者
+    `chsh -s /bin/zsh`
+
+## 修改配置之后立即生效
 
 修改立即生效 `source ~/.zshrc`
 

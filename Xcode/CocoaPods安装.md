@@ -26,12 +26,13 @@ pod update --verbose --no-repo-update
     还有一点需要注意，pod setup在执行时，会输出Setting up CocoaPods master repo，但是会等待比较久的时间。这步其实是 Cocoapods 在将它的信息下载到 ~/.cocoapods目录下，如果你等太久，可以试着 cd 到那个目录，用du -sh * 来查看下载进度。
 
     如果报以下错误：
-        ```
-        ERROR:  While executing gem ... (Errno::EPERM)
-        Operation not permitted - /usr/bin/xcodeproj
-        解决方案：
-        sudo gem install -n /usr/local/bin cocoapods
-        ```
+    ERROR:  While executing gem ... (Errno::EPERM)
+    Operation not permitted - /usr/bin/xcodeproj
+    解决方案： `sudo gem install -n /usr/local/bin cocoapods`
+    
+    如果报错：You don't have write permissions for the /usr/bin directory.
+    使用：`sudo gem install cocoapods -n /usr/local/bin`
+    
 5. 设置CocoaPods的镜像索引
     `pod setup`
     * 第一次执行pod setup时，CocoaPods 会将这些podspec索引文件更新到本地的 ~/.cocoapods/目录下，这个索引文件比较大，有 120M 左右。所以第一次更新时非常慢。
@@ -50,6 +51,12 @@ pod update --verbose --no-repo-update
     `$ pod search XXX`  
 5. 在项目文件夹下创建默认的 Podfile  
     `$ pod init`  
+6. 忽略更新
+
+```
+pod install --verbose --no-repo-update
+pod update --verbose --no-repo-update
+```
 
 ## Pod file 格式说明  
 

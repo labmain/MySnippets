@@ -1,10 +1,10 @@
 ## 安装
 
-`brew install zsh-syntax-highlighting`
-会自动下载这个插件，并将
+Clone this repository in oh-my-zsh's plugins directory:
 
-`source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`
-将这一句加在你的~/.zshrc中。
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
 
 启动插件：
 `plugins=(git zsh-syntax-highlighting)`

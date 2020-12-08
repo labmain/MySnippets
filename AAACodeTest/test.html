@@ -1,45 +1,266 @@
 <!DOCTYPE html>
-<html>
+<html lang="cn">
 
 <head>
-    <meta charset="utf-8">
-    <title>haha</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        a {
+            color: #050505;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        input {
+            border: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        body {
+            background-color: #f3f5f7;
+        }
+        header {
+            height: 100px;
+            /* background-color: pink; */
+            overflow: hidden;
+        }
+        nav {
+            width: 1200px;
+            height: 42px;
+            /* background-color: purple; */
+            margin: 26px auto;
+        }
+        .logo {
+            float: left;
+            width: 80px;
+            text-align: center;
+            height: 42px;
+            background-color: #fff;
+            line-height: 42px;
+        }
+        .navbar {
+            float: left;
+            height: 42px;
+            line-height: 42px;
+            margin-left: 50px;
+        }
+        .navbar li {
+            float: left;
+        }
+        .navbar li a {
+            padding: 0 8px;
+            display: block;
+        }
+        .navbar li a:hover {
+            border-bottom: 2px solid #00a4ff;
+        }
+        .search {
+            /* width: 410px; */
+            /* height: 38px; */
+            border: 1px solid #00a4ff;
+            float: right;
+        }
+        .search input[type=text] {
+            /* background-color: pink; */
+            width: 360px;
+            height: 38px;
+            padding-left: 20px;
+            float: left;
+        }
+        .search input[type=submit] {
+            width: 50px;
+            height: 38px;
+            background-color: #00a4ff;
+            float: left;
+        }
+        .banner {
+            height: 420px;
+            background-color: #1c036c;
+        }
+        .banner-in {
+            height: 420px;
+            background-color: rgb(49, 49, 189);
+        }
+        .slidebar {
+            height: 420px;
+            width: 190px;
+            background-color:rgba(0, 0, 0, 0.4);
+            float: left;
+        }
+        .slidebar li a {
+            color: #fff;
+            font-size: 16px;
+            padding: 0 20px;
+            display: block;
+            /* height: 45px; */
+            line-height: 45px;
+        }
+        .slidebar li a:hover {
+            color: #7a7d80;
+        }
+        .slidebar li span {
+            float: right;
+            font-family: Arial;
+        }
+        .timetable {
+            float: right;
+            width: 230px;
+            height: 300px;
+            background-color: #fff;
+            margin-top: 50px
+        }
+        .timetable dt {
+            background-color: #9bceea;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .timetable dd {
+            width: 193px;
+            height: 60px;
+            /* background-color: purple; */
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+            padding-top: 12px;
+            box-sizing: border-box;
+        }
+        .timetable dd h4 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #4e4e4e;
+        }
+        .timetable dd p {
+            font-size: 14px;
+            color: #a5a5a5;
+        }
+        .timetable dd:last-child {
+            border: 0;
+        }
+        .timetable dd a {
+            line-height: 38px;
+            border: 1px solid#00a4ff;
+            display: block;
+            text-align: center;
+            color: #00a4ff;
+            font-weight: 700;
+        }
+        .timetable dd a:hover {
+            background-color: #00aeff;
+            color: #fff;
+        }
+        .recommend {
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            margin-top: 8px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2)
+        }
+        .recommend a {
+            padding: 0 30px;
+            border-right: 1px solid #ccc;
+        }
+        .recommend a:hover,
+        .recommend a:first-child {
+            color: #00a4ff;
+        }
+        .recommend a:last-child {
+            color: #00a4ff;
+            border: 0;
+            float: right;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
-    <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
-    <script src="https://cdn.bootcss.com/Base64/1.0.1/base64.js"></script>
-    <script src="https://cdn.bootcss.com/node-uuid/1.4.8/uuid.js"></script>
-    <script>
-        // uuid
-        var uuid = uuid.v1();
-
-        // 时间戳
-        var timestamp1 = Date.parse(new Date());
-        // path  为uri部分 eg. http://kmf.com/users/1?p=123   则path为 /users/1
-        var path = "/users/1";
-        // method 为 POST  GET  DELETE  PUT  请求方式 为大写
-        var method = "GET";
-        /* query 为 url  ?部分的内容  eg. http://kmf.com/users/1?keywords=kmf&p=123   则query为```keywords=kmf&p=10```
-        转化为数组 并按照key 升序排序，后连接起来。 ```（keywordskmfp10）```
-        */
-        var query = "keywords=kmf&p=10";
-        // body json体  进行32位 md5之后转大写 base64encode    eg. ```base64_encode(strup(md5($body)));```
-        var body = btoa(md5("body"));
-        var appKey = "kmf.com.word";
-        // sign
-        /*
-        前面计算的字符串再加上appKey  按照Base64编码规则 把前面的HMAC值 hash256加密编码成字符串，即得到签名值（Signature）。
-        上面例子假设appKey为toefl
-        则签名待加密字符串 StringToSign : 1502855485ABASDFAASDF1231ASDA/users/1GETkeywordskmfp10e10adc3949ba59abbe56toefl
-        最后对StringToSign 加密 生成sign
-        ```$sign = base64_encode(hash_hmac('sha256', $StringToSign,  $appSecret, true));```
-        */
-        // 时间戳 + uuid + path + method + query + body + appKey
-
-        // document.write(uuid + timestamp1 + path + method + query + body + appKey);
-        document.write(uuid);
-    </script>
+    <header>
+        <nav>
+            <!-- logo -->
+            <div class="logo">
+                <a href="#">LOGO</a>
+            </div>
+            <!-- nav -->
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">职业规划</a></li>
+                </ul>
+            </div>
+            <!-- search -->
+            <div class="search">
+                <form action="">
+                    <input type="text" placeholder="请输入关键字">
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner-in container">
+            <div class="slidebar">
+                <ul>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                    <li><a href="#">前端开发<span>></span></a></li>
+                </ul>
+            </div>
+            <dl class="timetable">
+                <dt>我的课程表</dt>
+                <dd>
+                    <h4>继续学习 程序语言涉及</h4>
+                    <p>正在学习-使用对象</p>
+                </dd>
+                <dd>
+                        <h4>继续学习 程序语言涉及</h4>
+                        <p>正在学习-使用对象</p>
+                </dd>
+                <dd>
+                        <h4>继续学习 程序语言涉及</h4>
+                        <p>正在学习-使用对象</p>
+                </dd>
+                <dd>
+                       <a href="#">全部课程</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="recommend container">
+            <a href="#">精品推荐</a>
+            <a href="#">Jquery</a>
+            <a href="#">Spart</a>
+            <a href="#">MySql</a>
+            <a href="#">javaWeb</a>
+            <a href="#">MySql</a>
+            <a href="#">javaWeb</a>
+            <a href="#">修改兴趣</a>
+        </div>
+    </div>
 </body>
 
 </html>

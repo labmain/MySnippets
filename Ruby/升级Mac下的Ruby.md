@@ -1,6 +1,9 @@
 rvm是什么？为什么要安装rvm呢，因为rvm可以让你拥有多个版本的Ruby，并且可以在多个版本之间自由切换。
 
 ## 安装rvm
+ 
+Ruby China
+https://ruby-china.org/wiki/rvm-guide
 
 ```
 $ curl -L get.rvm.io | bash -s stable

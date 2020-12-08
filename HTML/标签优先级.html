@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**< 继承或者*的贡献值 0，0,0,0 */
+        div { /* 标签选择器 0，0，0，1 */
+            color: pink;
+        }
+        :first-child { /* 伪类选择器 0，0，1，0 */
+            color: green;
+        }
+        .king { /**< 类选择器 0,0,1,0 */
+            color: blue;
+        }
+        #wang { /**< id选择器 0，1，0，0 */
+            color:red;
+        }
+        /**< 每个行内样式贡献值为 1,0,0,0 */
+        div {
+            color:orange!important;/**< important 级别最高，一旦出现优先执行 */
+        }
+    </style>
+</head>
+<body>
+    <div class="king" id="wang" style="color:skyblue">王者农药</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+窗口通知
+
+当窗口状态变化时候,系统会发出相关通知消息。
+
+NSWindowDidBecomeKeyNotification:窗口成为keyWindow
+NSWindowDidBecomeMainNotification:窗口成为mainWindow
+NSWindowDidMoveNotification:窗口移动
+NSWindowDidResignKeyNotification:窗口不再是keyWindow
+NSWindowDidResignMainNotification:窗口不再是mainWindow
+NSWindowDidResizeNotification:窗口大小改变
+NSWindowWillCloseNotification:关闭窗口
+
+
+比如说有多个窗口来回切换操作，2个窗口之间会有业务影响，一个窗口的界面数据修改会影响另外一个窗口的界面数据。可以注册NSWindowDidBecomeMainNotification，NSWindowDidBecomeKeyNotification消息，当窗口每次接收到这个消息可以重新获取数据刷新界面。
+
+注册关闭窗口的消息通知,可以在窗口关闭前完成一些资源释放,提醒用户有变化的数据是否需要保存等。
