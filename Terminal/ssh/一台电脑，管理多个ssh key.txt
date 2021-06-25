@@ -6,8 +6,6 @@ Host name
   User  root
   Identityfile  ~/.ssh/name
 
-
-
 注意：
 
 每个邮箱能配置一个公私钥，邮箱是一个重要的身份识别标志

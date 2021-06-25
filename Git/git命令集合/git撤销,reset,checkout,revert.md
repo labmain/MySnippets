@@ -39,6 +39,7 @@ $ git reset --keep [commit]
 ## revert
 
 * 新建一个commit，用来撤销指定commit,后者的所有变化都将被前者抵消，并且应用到当前分支
+* git revert 撤销某次操作，此操作不会修改原本的提交记录，而是会新增一条提交记录来抵消某次操作。
 ```
 $ git revert [commit]
 ```

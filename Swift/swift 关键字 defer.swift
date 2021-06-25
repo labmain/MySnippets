@@ -32,3 +32,29 @@ func loadCityList(_ finish: ((Error?, [String]?) -> ())?) {
         citys = tempCitys
     }
 }
+
+// 场景1：一些资源用完后需释放，这里给的是官方的一个案例
+func processFile(filename: String) throws {
+    if exists(filename) {
+        let file = open(filename)
+        defer {
+            close(file)
+        }
+        while let line = try file.readline() {
+            // 处理文件。
+        }
+        // close(file) 会在这里被调用，即作用域的最后。
+    }
+}
+// 场景2：加锁解锁，借鉴了kingfisher，在加锁后立刻用defer解锁，避免忘记解锁
+let lock = NSLock()
+func testDefer() {
+    lock.lock()
+    defer {
+        lock.unlock()
+    }
+    
+    doSomething()
+}
+testDefer()
+
