@@ -1,13 +1,12 @@
 [InjectionIII](https://github.com/johnno1962/InjectionIII) 热重载刷新UI
 
-1. `Other Linker Flags` 添加：`-Xlinker -interposable`
-2. `delegate didfinfish`添加：
+1.  `delegate didfinfish`添加：
 ```swift
 #if DEBUG
 Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
 #endif
 ```
-3. 代码添加（injected方法里可以添加任意代码）：
+2. 代码添加（injected方法里可以添加任意代码）：
 ```swift
 extension UIViewController {
     #if DEBUG
@@ -47,7 +46,7 @@ extension UIView {
 }
 
 ```
-4. 保存代码即可刷新
+3. 保存代码即可刷新
 
 有几个需要注意的地方：
 1. 进行swizzling的类不要动态修改，否则二次交换，会引起死循环。
