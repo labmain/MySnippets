@@ -6,6 +6,17 @@
 Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
 #endif
 ```
+
+```objc
+#if DEBUG
+    // iOS
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+    // tvOS
+    //[[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle"] load];
+    // macOS
+    //[[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle"] load];
+#endif
+```
 2. 代码添加（injected方法里可以添加任意代码）：
 ```swift
 extension UIViewController {

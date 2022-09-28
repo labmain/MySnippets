@@ -2,7 +2,12 @@
 `brew install autojump`
 
 安装完autojump后 把下面放到 ~/.zshrc 文件里
+
+intel cpu
 `[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh`
+
+m1 cpu
+`[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && source /opt/homebrew/etc/profile.d/autojump.sh`
 
 请在 .zshrc 文件相应的位置，找到 plugins=() 这行,添加 autojump 记得各插件名之间用英文空格隔开
 

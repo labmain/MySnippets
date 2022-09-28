@@ -1,0 +1,16 @@
+Host gitlab.rsdx.com
+        PreferredAuthentications publickey
+        Identityfile  ~/.ssh/gitlab
+Host nas.labmain.com
+        Port 9022
+        PreferredAuthentications publickey
+        Identityfile  ~/.ssh/gitlab_nas
+Host github.com
+        PreferredAuthentications publickey
+        Identityfile  ~/.ssh/github
+Host gitee.com
+        PreferredAuthentications publickey
+        Identityfile  ~/.ssh/gitee
+Host codeup.aliyun.com
+        PreferredAuthentications publickey
+        Identityfile  ~/.ssh/aimei_app

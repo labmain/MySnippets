@@ -10,6 +10,9 @@ pod update --verbose --no-repo-update
 
 如果无法获取到最新版本的 框架，请运行以下命令更新本地的 pod 仓库
 `pod repo update`
+## 官网
+
+https://guides.cocoapods.org/using/getting-started.html#installation
 
 ## 安装
 0. 先安装更新gem
